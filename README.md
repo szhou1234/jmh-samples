@@ -9,3 +9,6 @@ http://psy-lob-saw.blogspot.com/2013/04/writing-java-micro-benchmarks-with-jmh.h
 And contains the examples discussed under the psy.lob.saw package.<br/>
 The JMH framework is hosted here: http://openjdk.java.net/projects/code-tools/jmh/<br/>
 The JMH samples are a MUST read (and are always up to date): http://hg.openjdk.java.net/code-tools/jmh/file/tip/jmh-samples/src/main/java/org/openjdk/jmh/samples/<br/>
+
+mvn clean install
+java -jar target/microbenchmarks.jar
