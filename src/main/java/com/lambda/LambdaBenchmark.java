@@ -1,4 +1,4 @@
-package com.szhou.lambda;
+package com.lambda;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -54,7 +54,7 @@ public class LambdaBenchmark {
         }
     }
 
-    @Setup
+//    @Setup
     public void setup() {
         integers = new ArrayList<>(size);
         Random random = new Random();
@@ -63,7 +63,7 @@ public class LambdaBenchmark {
         }
     }
 
-    @Benchmark
+//    @Benchmark
     public int iteratorMaxInteger() {
         int max = Integer.MIN_VALUE;
         for (Iterator<Integer> it = integers.iterator(); it.hasNext(); ) {
@@ -72,7 +72,7 @@ public class LambdaBenchmark {
         return max;
     }
 
-    @Benchmark
+//    @Benchmark
     public int forEachLoopMaxInteger() {
         int max = Integer.MIN_VALUE;
         for (Integer n : integers) {
@@ -81,7 +81,7 @@ public class LambdaBenchmark {
         return max;
     }
 
-    @Benchmark
+//    @Benchmark
     public int forEachLambdaMaxInteger() {
         final Wrapper wrapper = new Wrapper();
         wrapper.inner = Integer.MIN_VALUE;
@@ -90,7 +90,7 @@ public class LambdaBenchmark {
         return wrapper.inner;
     }
 
-    @Benchmark
+//    @Benchmark
     public int forMaxInteger() {
         int max = Integer.MIN_VALUE;
         for (int i = 0; i < size; i++) {
@@ -99,7 +99,7 @@ public class LambdaBenchmark {
         return max;
     }
 
-    @Benchmark
+//    @Benchmark
     public int forMax2Integer() {
         int max = Integer.MIN_VALUE;
         List<Integer> integersLocal = integers;
@@ -109,17 +109,17 @@ public class LambdaBenchmark {
         return max;
     }
 
-    @Benchmark
+//    @Benchmark
     public int parallelStreamMaxInteger() {
         return integers.parallelStream().mapToInt(Integer::intValue).reduce(Integer.MIN_VALUE, Integer::max);
     }
 
-    @Benchmark
+//    @Benchmark
     public int streamMaxInteger() {
         return integers.stream().mapToInt(Integer::intValue).reduce(Integer.MIN_VALUE, Integer::max);
     }
 
-    @Benchmark
+//    @Benchmark
     public int lambdaMaxInteger() {
         return integers.stream().mapToInt(Integer::intValue).reduce(Integer.MIN_VALUE, (a, b) -> Integer.max(a, b));
     }

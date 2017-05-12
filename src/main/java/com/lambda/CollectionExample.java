@@ -1,4 +1,4 @@
-package com.szhou.lambda;
+package com.lambda;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -12,7 +12,6 @@ public class CollectionExample {
         }
         collection.removeIf(integer -> integer < 90);
         collection.forEach(p -> System.out.println(p));
-        // what does this actually do?
         collection.stream().map(integer -> integer * 2).reduce((integer, integer2) -> integer - 1);
     }
 }

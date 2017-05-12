@@ -1,4 +1,4 @@
-package com.szhou.lambda;
+package com.lambda;
 
 // http://stackoverflow.com/questions/23983832/is-method-reference-caching-a-good-idea-in-java-8/23991339#23991339
 public class Stateless {

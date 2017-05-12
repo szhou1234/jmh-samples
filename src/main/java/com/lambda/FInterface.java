@@ -1,4 +1,4 @@
-package com.szhou.lambda;
+package com.lambda;
 
 @FunctionalInterface
 public interface FInterface {
